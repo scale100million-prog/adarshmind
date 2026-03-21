@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  --color-navy: #0b1f3a;
+  --color-deep-red: #8b1c13;
+  --color-light-red: #b91c1c;
+  --color-off-white: #f5f7fa;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-navy bg-white antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.glass-nav {
+  @apply bg-navy/95 backdrop-blur-md border-b border-white/10;
+}
+
+.btn-primary {
+  @apply bg-light-red text-white px-8 py-4 rounded-full font-bold transition-all hover:bg-deep-red hover:scale-105 active:scale-95 shadow-lg shadow-light-red/20;
+}
+
+.btn-secondary {
+  @apply bg-transparent text-white border-2 border-white/30 px-8 py-4 rounded-full font-bold transition-all hover:bg-white/10 hover:border-white/50 active:scale-95;
+}
+
+.card-shadow {
+  @apply shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300;
+}
